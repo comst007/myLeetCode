@@ -15,7 +15,11 @@ class Solution:
             return True
         else:
             return False
-
+    def distance(self, point1, point2):
+        delt_x = point1[0] - point2[0]
+        delt_y = point1[1] - point2[1]
+        dist01 = delt_x * delt_x + delt_y * delt_y
+        return dist01
     def select_k(self, points:list, res:list, k:int):
         if k == 0:
             if self.ifTrue(res):
@@ -31,10 +35,29 @@ class Solution:
             sub_arr.pop(i)
             self.select_k(sub_arr, res, k - 1)
             res.pop()
+    def select_k_v2(self, points):
+        cnt_p = len(points)
+        if cnt_p < 3:
+            self.cnt = 0
+            return
+        for i in range(cnt_p):
+            dict_dist = {}
+            for j in range(cnt_p):
+                if i == j:
+                    continue
+                key_dist = self.distance(points[i], points[j])
+
+                val_cnt = dict_dist.setdefault(key_dist, 0)
+                dict_dist[key_dist ] = val_cnt + 1
+
+            for k, v in dict_dist.items():
+                if v >= 2:
+                    self.cnt += v * (v - 1)
+
 
     def numberOfBoomerangs(self, points):
         self.cnt = 0
-        self.select_k(points, [], 3)
+        self.select_k_v2(points)
         return self.cnt
 
 
