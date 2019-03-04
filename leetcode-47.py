@@ -7,7 +7,7 @@ class Solution:
             last_index = -1
             for i in range(cnt_nums):
                 if last_index == -1 or nums[last_index] != nums[i]:
-                    last_index = i 
+                    last_index = i
                     sub = nums[:]
                     res_cur.append(nums[i])
                     sub.pop(i)
