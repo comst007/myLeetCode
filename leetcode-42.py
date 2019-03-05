@@ -30,7 +30,7 @@ class Solution:
             cur_sum = min(max_r[i], max_l[i]) - height[i]
             res += cur_sum
 
-        return res 
+        return res
 
 
 sl = Solution()
