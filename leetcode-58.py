@@ -12,4 +12,4 @@ class Solution:
         l = h
         while l <= n and s[-l] != ' ':
             l += 1
-        return l - h 
+        return l - h
