@@ -17,7 +17,7 @@ class Solution:
         else:
             if pos == len(word) - 1:
                 return True
-            
+
         visit[(i,j)] = True
 
         direction = [(-1, 0), (0, 1), (1, 0), (0, -1)]
