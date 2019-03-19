@@ -42,7 +42,7 @@ class Solution:
                 return root.val + biger
             else:
                 return root.val
-        
+
 
 
     def maxPathSum(self, root: TreeNode) -> int:
