@@ -4,7 +4,7 @@ class Solution:
             return [1]
         if numRows == 1:
             return [1,1]
-        
+
 
         last = [1,1]
         for i in range(3, numRows + 1):
